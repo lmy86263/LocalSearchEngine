@@ -9,8 +9,16 @@ import org.springframework.test.context.junit4.SpringRunner;
 @SpringBootTest
 public class LocalsearchengineApplicationTests {
 
-	@Test
-	public void contextLoads() {
-	}
+    @Test
+    public void testNGram(){
+        NGram ngram = new NGram("我喜欢你说she love the world");
+        System.out.println(String.join(",", ngram.take()));
+    }
+
+    @Test
+    public void testTakeMixed(){
+        NGram ngram = new NGram("i love the world haha");
+        System.out.println(String.join(",", ngram.take()));
+    }
 
 }
